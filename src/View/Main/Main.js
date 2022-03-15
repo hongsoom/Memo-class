@@ -27,10 +27,10 @@ class Main extends Component {
     });
   };
 
-  componentDidUpdate() {
+  /* componentDidUpdate() {
     console.log("isClicked", this.state.isClicked);
     console.log("content", this.state.content);
-  }
+  }*/
 
   render() {
     return (
@@ -40,17 +40,20 @@ class Main extends Component {
         {this.state.isClicked ? (
           <AddMemo
             onClick={this.onClick}
-            title="Add Memo"
+            title="Memo"
             saveMemo={this.saveMemo}
           />
         ) : null}
         <div className="Main">
           <div className="MainForm">
             <div className="MainTitle">Memo</div>
-            <div className="List"> </div>
+            <div className="List">
+              <p>{this.state.title}</p>
+              <span>{this.state.content}</span>
+            </div>
             <div className="MainBottom">
               <button type="button" className="AddBtn" onClick={this.onClick}>
-                +
+                Add
               </button>
             </div>
           </div>
